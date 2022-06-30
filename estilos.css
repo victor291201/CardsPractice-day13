@@ -1,0 +1,82 @@
+@import url('https://fonts.googleapis.com/css2?family=Mingzat&family=Raleway:wght@100&display=swap');
+:root{
+  --color1:rgba(2,0,27,1);
+  --color2:rgba(0,0,116,1);
+  --fuente1:"Mingzat";
+  --fuente2:"Raleway";
+  --transformacion1:perspective(600px) rotateY(0deg);
+  --transformacion2:perspective(600px) rotateY(180deg);
+  --transformacion3:perspective(600px) rotateY(360deg);
+  --width:300px;
+  --height:450px;
+  --boxshadow:  0px 10px 5px -6px rgba(0,0,0,0.75);
+  --transition:0.5s transform ease;
+}
+*,*::after,*::before{
+  box-sizing: border-box;
+  font-family: var(--fuente2);
+}
+body{
+margin: 0;
+padding: 0;
+background: linear-gradient(0deg, var(--color1) 0%, var(--color2) 100%);
+background-repeat: no-repeat;
+display: flex;
+align-items: center;
+justify-content: space-around;
+height: 100%;
+}
+h1{
+  font-family: var(--fuente1);
+  margin-bottom: -10px; 
+}
+.carta{
+  width: var(--width);
+  height: var(--height);
+  position: relative;
+}
+.cara{
+  background-size: cover;
+  background-position: center;
+  transform: var(--transformacion1);
+  width: var(--width);
+  height: var(--height);
+  position:absolute;
+  transition: var(--transition);
+  border-radius:7px;
+  box-shadow: var(--boxshadow);
+}
+.reversa,.fondo{
+  transform: var(--transformacion2);
+  width: var(--width);
+  height: var(--height);
+  text-align: center;
+  color:white;
+  padding:10px 15px;
+  backface-visibility: hidden;
+  position:absolute;
+  border-radius:7px;
+  transition: var(--transition);
+  box-shadow: var(--boxshadow);
+}
+.fondo{
+  background-color: rgba(2,0,27,1);
+  opacity: .7;
+}
+.carta:hover .cara{
+  transform: var(--transformacion2);
+  transition: var(--transition);
+}
+.carta:hover .reversa,.carta:hover .fondo{
+  transform: var(--transformacion3);
+  transition: var(--transition);
+}
+.img1{
+  background-image: url("./imagen1.jpg");
+}
+.img2{
+  background-image: url("./imagen2.jpg");
+}
+.img3{
+  background-image: url("./imagen3.jpg");
+}
